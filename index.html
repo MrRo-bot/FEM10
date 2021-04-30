@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>
+      Frontend Mentor | Huddle landing page with alternating feature blocks
+    </title>
+    <style>
+      /*typography*/
+
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap");
+
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+      }
+
+      :root {
+        font-size: 18px;
+        font-family: "Open Sans", sans-serif;
+        --Pink: hsl(322, 100%, 66%);
+        --Very-Pale-Cyan: hsl(193, 100%, 96%);
+        --Very-Dark-Cyan: hsl(192, 100%, 9%);
+        --Grayish-Blue: hsl(208, 11%, 55%);
+      }
+
+      li,
+      a {
+        list-style: none;
+        text-decoration: none;
+      }
+
+      h1,
+      h2 {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .get-started,
+      .try {
+        text-align: center;
+        font-size: 0.65rem;
+        font-weight: 600;
+      }
+
+      .popup p {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .attribution,
+      .copyright {
+        font-size: 0.7rem;
+      }
+
+      .attribution a:hover,
+      .attribution a:focus {
+        color: var(--Pink);
+        transition: all 0.3s ease-in-out;
+      }
+
+      /*typography*/
+
+      /*designs*/
+
+      header {
+        background: url("images/bg-hero-mobile.svg") no-repeat
+          var(--Very-Pale-Cyan);
+      }
+
+      h1,
+      h2 {
+        color: var(--Very-Dark-Cyan);
+      }
+
+      header p {
+        color: var(--Very-Dark-Cyan);
+      }
+
+      main p {
+        color: var(--Grayish-Blue);
+        font-size: 0.8rem;
+        line-height: 1.5em;
+      }
+
+      footer p,
+      a {
+        color: var(--Very-Pale-Cyan);
+      }
+
+      .get-started,
+      .try,
+      .popup {
+        box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.25) 0px 3px 7px -3px;
+        border-radius: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .get-started:hover,
+      .get-started:focus,
+      .try:hover,
+      .try:focus {
+        cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.3) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.4) 0px 3px 7px -3px;
+      }
+
+      .try,
+      .flex3 {
+        background: white;
+      }
+
+      .get-started {
+        background: var(--Pink);
+        color: var(--Very-Pale-Cyan);
+      }
+
+      .flex3 {
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+          rgba(17, 17, 26, 0.1) 0px 0px 8px;
+        border-radius: 20px;
+      }
+
+      .popup {
+        background-color: white;
+        border-radius: 15px;
+      }
+
+      .popup p {
+        color: var(--Very-Dark-Cyan);
+      }
+
+      footer {
+        background: var(--Very-Dark-Cyan);
+      }
+
+      .grid2-item {
+        transition: all 0.3s ease-in-out;
+      }
+
+      .grid2-item a:hover,
+      .grid2-item a:focus {
+        text-decoration: underline;
+      }
+
+      /*designs*/
+
+      /*alignment*/
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        padding: 1em 1em 10em 1em;
+      }
+
+      footer {
+        position: relative;
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      img {
+        object-fit: cover;
+        max-width: 100%;
+        width: 40em;
+      }
+
+      .flex1,
+      .flex2,
+      .flex3,
+      .flex4,
+      .sub-flex1,
+      .sub-flex2 {
+        display: flex;
+      }
+
+      .grid1,
+      .grid2 {
+        display: grid;
+      }
+
+      .flex1,
+      .sub-flex2 {
+        flex-direction: row;
+      }
+
+      .flex2,
+      .flex3,
+      .flex4,
+      .sub-flex1 {
+        flex-direction: column;
+      }
+
+      .flex1 {
+        justify-content: space-between;
+      }
+
+      .flex1-item {
+        margin: 1em;
+      }
+
+      .logo-top {
+        object-fit: cover;
+        max-width: 100%;
+        width: 6em;
+      }
+
+      .try {
+        padding: 0.5em 0;
+        max-width: 100%;
+        width: 10em;
+      }
+
+      .flex2 {
+        padding: 2em 0;
+      }
+
+      .flex2-item {
+        padding: 1em 2em;
+      }
+
+      .get-started {
+        padding: 1em;
+        margin: 3em auto;
+        max-width: 20em;
+      }
+
+      .flex3 {
+        margin: 2em auto;
+        padding: 1em 3em;
+      }
+
+      .flex3-item {
+        margin-top: 2em;
+      }
+
+      .popup {
+        min-width: 10em;
+        width: 17em;
+        padding: 0.5em;
+        position: absolute;
+        top: -5em;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      footer {
+        padding: 10em 1em 3em 1em;
+      }
+
+      .flex4,
+      .sub-flex1 {
+        gap: 2em;
+      }
+
+      .logo-bottom {
+        object-fit: cover;
+        max-width: 100%;
+        width: 10em;
+      }
+
+      .grid1 {
+        grid-template-columns: 1fr 14fr;
+        align-items: flex-start;
+        gap: 1.5em;
+      }
+
+      .grid1-item img {
+        width: 1em;
+        margin-top: 0.2em;
+      }
+
+      .grid1-item p {
+        margin: 0;
+        text-align: left;
+      }
+
+      .grid2 {
+        gap: 1.5em;
+      }
+
+      .sub-flex2 {
+        margin: 0 auto;
+        max-width: 10em;
+        justify-content: space-around;
+      }
+
+      .sub-flex2-item {
+        border-radius: 50%;
+        border: 1px solid white;
+        width: 2em;
+        height: 2em;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        padding: 0.3em;
+      }
+
+      .sub-flex2-item:nth-of-type(1) {
+        background: url(images/facebook.png);
+      }
+
+      .sub-flex2-item:nth-of-type(2) {
+        background: url(images/twitter.png);
+      }
+
+      .sub-flex2-item:nth-of-type(3) {
+        background: url(images/instagram.png);
+      }
+
+      .sub-flex2-item:nth-of-type(1):hover {
+        background: url(images/facebook-pink.png);
+        border: 1px solid var(--Pink);
+      }
+
+      .sub-flex2-item:nth-of-type(2):hover {
+        background: url(images/twitter-pink.png);
+        border: 1px solid var(--Pink);
+      }
+
+      .sub-flex2-item:nth-of-type(3):hover {
+        background: url(images/instagram-pink.png);
+        border: 1px solid var(--Pink);
+      }
+
+      .sub-flex2-item:nth-of-type(1),
+      .sub-flex2-item:nth-of-type(2),
+      .sub-flex2-item:nth-of-type(3),
+      .sub-flex2-item:nth-of-type(1):hover,
+      .sub-flex2-item:nth-of-type(2):hover,
+      .sub-flex2-item:nth-of-type(3):hover {
+        background-repeat: no-repeat;
+        background-clip: content-box;
+        background-position: center;
+        background-size: 1.1em 1.1em;
+      }
+
+      /*alignment*/
+
+      /*media queries*/
+
+      @media screen and (min-width: 786px) {
+        header {
+          background: url("images/bg-hero-desktop.svg") no-repeat
+            var(--Very-Pale-Cyan);
+          background-size: cover;
+          height: 100vh;
+        }
+
+        main {
+          margin: 0 auto;
+        }
+
+        .logo-top {
+          width: 10em;
+        }
+
+        .try {
+          width: 15em;
+        }
+
+        .flex2,
+        .flex3 {
+          flex-direction: row;
+        }
+
+        .sub-flex1 {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+
+        .flex1-item {
+          margin: 1.5em;
+        }
+
+        .flex2 {
+          align-items: center;
+        }
+
+        .flex2-item {
+          padding: 2.5em 1.5em;
+          width: 100%;
+        }
+
+        .flex2-item > *:not(.get-started) {
+          text-align: left;
+        }
+
+        .flex2-item .get-started {
+          margin: 3em 0;
+        }
+
+        .flex3 {
+          max-width: 45em;
+          justify-content: space-between;
+          align-items: center;
+          gap: 2em;
+          margin: 4em auto;
+        }
+
+        .flex3-item {
+          width: 100%;
+        }
+
+        .flex3:nth-of-type(1) .flex3-item:nth-of-type(1),
+        .flex3:nth-of-type(3) .flex3-item:nth-of-type(1) {
+          order: 2;
+        }
+        .flex3:nth-of-type(1) .flex3-item:nth-of-type(2),
+        .flex3:nth-of-type(3) .flex3-item:nth-of-type(2) {
+          order: 1;
+        }
+
+        .flex3-item p,
+        .flex3-item h2 {
+          text-align: left;
+        }
+
+        .popup {
+          width: 27em;
+          padding: 0.5em 2.5em;
+          top: -5em;
+        }
+
+        .logo-bottom {
+          width: 14em;
+        }
+
+        .sub-flex1-item {
+          width: 33.33%;
+        }
+
+        .grid2 {
+          margin: 0;
+        }
+      }
+
+      @media screen and (min-width: 1000px) {
+        .logo-top {
+          width: 13em;
+        }
+
+        .try {
+          padding: 1em 0;
+        }
+
+        .flex1-item {
+          margin: 2.5em;
+        }
+
+        .flex2-item {
+          padding: 0 2.5em;
+        }
+
+        .flex2-item:first-of-type,
+        .flex2-item:last-of-type {
+          width: 50%;
+        }
+
+        .flex2-item h1 {
+          font-size: 2rem;
+        }
+
+        .flex2-item p {
+          font-size: 1.1rem;
+        }
+
+        .flex3 {
+          max-width: 65em;
+        }
+
+        .popup {
+          width: 33em;
+          padding: 0.5em 2.5em;
+          top: -5em;
+        }
+
+        .grid2 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /*media queries*/
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="flex1">
+        <div class="flex1-item">
+          <img class="logo-top" src="images/logo-top.svg" alt="Huddle logo" />
+        </div>
+        <div class="flex1-item">
+          <div class="try">Try It Free</div>
+        </div>
+      </div>
+      <div class="flex2">
+        <div class="flex2-item">
+          <h1>Build The Community Your Fans Will Love</h1>
+          <p>
+            Huddle re-imagines the way we build communities. You have a voice,
+            but so does your audience. Create connections with your users as you
+            engage in genuine discussion.
+          </p>
+          <div class="get-started">Get Started For Free</div>
+        </div>
+        <div class="flex2-item">
+          <img
+            class="design-mockup"
+            src="images/illustration-mockups.svg"
+            alt="Design Mockup"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="flex3">
+        <div class="flex3-item">
+          <img
+            src="images/illustration-grow-together.svg"
+            alt="Grow together image"
+          />
+        </div>
+        <div class="flex3-item">
+          <h2>Grow Together</h2>
+          <p>
+            Generate meaningful discussions with your audience and build a
+            strong, loyal community. Think of the insightful conversations you
+            miss out on with a feedback form.
+          </p>
+        </div>
+      </div>
+      <div class="flex3">
+        <div class="flex3-item">
+          <img
+            src="images/illustration-flowing-conversation.svg"
+            alt="flowing conversations image"
+          />
+        </div>
+        <div class="flex3-item">
+          <h2>Flowing Conversations</h2>
+          <p>
+            You wouldn't paginate a conversation in real life, so why do it
+            online? Our threads have just-in-time loading for a more natural
+            flow.
+          </p>
+        </div>
+      </div>
+      <div class="flex3">
+        <div class="flex3-item">
+          <img src="images/illustration-your-users.svg" alt="Users image" />
+        </div>
+        <div class="flex3-item">
+          <h2>Your Users</h2>
+          <p>
+            It takes no time at all to integrate Huddle with your app's
+            authentication solution. This means, once signed in to your app,
+            your users can start chatting immediately.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="popup">
+        <p>Ready To Build Your Community?</p>
+        <div class="get-started">Get Started For Free</div>
+      </div>
+      <div class="flex4">
+        <div class="flex4-item">
+          <img
+            class="logo-bottom"
+            src="images/logo-bottom.svg"
+            alt="Huddle logo"
+          />
+        </div>
+
+        <div class="flex4-item">
+          <div class="sub-flex1">
+            <div class="sub-flex1-item">
+              <div class="grid1">
+                <div class="grid1-item">
+                  <img src="images/icon-location.svg" alt="location icon" />
+                </div>
+                <div class="grid1-item">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua
+                  </p>
+                </div>
+                <div class="grid1-item">
+                  <img src="images/icon-phone.svg" alt="Call icon" />
+                </div>
+                <div class="grid1-item">
+                  <p>+1-543-123-4567</p>
+                </div>
+                <div class="grid1-item">
+                  <img src="images/icon-email.svg" alt="Email icon" />
+                </div>
+                <div class="grid1-item">
+                  <p>example@huddle.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="sub-flex1-item">
+              <ul class="grid2">
+                <li class="grid2-item"><a href="#">About Us</a></li>
+                <li class="grid2-item"><a href="#">What We Do</a></li>
+                <li class="grid2-item"><a href="#">FAQ</a></li>
+                <li class="grid2-item"><a href="#">Career</a></li>
+                <li class="grid2-item"><a href="#">Blog</a></li>
+                <li class="grid2-item"><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="sub-flex1-item">
+              <div class="sub-flex2">
+                <div class="sub-flex2-item"></div>
+                <div class="sub-flex2-item"></div>
+                <div class="sub-flex2-item"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex4-item">
+          <p class="attribution">
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. Coded by <a href="https://codepen.io/Mr-RO13OT">Mr.Robot</a>.
+          </p>
+          <p class="copyright">
+            &copy; Copyright 2018 Huddle. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
