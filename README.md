@@ -14,7 +14,7 @@
 
 ## Overview
 
-Created NEWBIE Huddle landing with Feature blocks
+Created JUNIOR Huddle landing with Feature blocks
 
 ### The challenge
 
