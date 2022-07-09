@@ -14,7 +14,7 @@
 
 ## Overview
 
-Creating a Huddle landing with Feature blocks
+Created NEWBIE Huddle landing with Feature blocks
 
 ### The challenge
 
@@ -26,8 +26,9 @@ Using every CSS basic features
 
 ### Links
 
-- GITHUB REPO: [https://github.com/MrRo-bot/FEM10]
-- Solution URL: [https://codepen.io/Mr-RO13OT/pen/MWJMbmV]
+- GITHUB REPO: [https://github.com/MrRo-bot/huddle-landing-page-with-alternating-feature-blocks]
+
+- Solution URL: [https://codepen.io/Mr-RO13OT/full/MWJMbmV]
 
 ## My process
 
